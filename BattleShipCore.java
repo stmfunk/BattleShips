@@ -1,6 +1,6 @@
 /***********************
  * PROJECT:       BattleShips
- * GROUP:         Team Hellfire Zombie Apocalypse of Death and Blood in Your Asshole
+ * GROUP:         Team 3 Tutorial Group 13
  * 
  * DESCRIPTION:   We'll add this when it's done
  *
