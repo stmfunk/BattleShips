@@ -13,24 +13,24 @@ public class Board
 		}
 
 	}
-	public void addShip(int x, int y, int length, int direction)
+	public void addShip(int x, int y, int length, char direction)
 	{
 		board[x][y] = 1;
 		for (int k = 1; k < length; k++)
 		{
-			if (direction == 0 )
+			if (direction == 'u' )
 			{
-				board[x][y-1] = 1;
+				board[x][y-k] = 1;
 			}
-			else if (direction == 1)
+			else if (direction == 'r')
 			{
 				board[x+1][y] = 1;
 			}
-			else if (direction == 2)
+			else if (direction == 'd')
 			{
 				board[x][y+1] = 1;
 			}
-			else if (direction == 3)
+			else if (direction == 'l')
 			{
 				board[x-1][y] = 1;
 			}
