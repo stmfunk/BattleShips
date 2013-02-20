@@ -8,6 +8,8 @@ public class Board
   private int player;
   private int lenX;
   private int lenY;
+  private int numOfBoats;
+  private boolean shipFull = false;
 
 	public Board(int width, int height, int boatSpaces, int numOfBoats, int player)
 	{
@@ -19,6 +21,7 @@ public class Board
     lenY = height;
     blank = new Space((width*height)-boatSpaces);
     shipTracker = new Ship[numOfBoats];
+    this.numOfBoats = numOfBoats;
     // This for loop initiates every
     // item in the array to false
     // so we don't have any issues with
@@ -45,6 +48,7 @@ public class Board
     // be true. We don't have any out of bounds
     // error catching here as this will be handled
     // by the graphic interface
+    if (shipFull) return;
     int x1 = x;
     int x2 = x;
     int y1 = y;
@@ -81,6 +85,7 @@ public class Board
       }
       
       Ship newShip = new Ship(this.player, length, new Position(x2,y2), new Position(x1,y1));
+      if (this.numOfBoats == newShip.numberOfShips) this.shipFull = true;
       this.shipTracker[newShip.numberOfShips-1] = newShip;
 	  	board[x][y] = newShip;
      }
